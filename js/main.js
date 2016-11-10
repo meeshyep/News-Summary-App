@@ -1,5 +1,4 @@
 var btn = document.getElementById("btn");
-var btn1 = document.getElementById("btn1");
 var articleDiv = document.getElementById("article");
 var summaryDiv = document.getElementById("summary");
 var fullArticleDiv = document.getElementById("full_article");
@@ -13,9 +12,7 @@ btn.addEventListener("click", function(){
   ourRequest.onload = function() {
     var ourData = JSON.parse(ourRequest.responseText);
     ourData.response.editorsPicks.forEach(function(object) {
-      var id = object.id;
-      var title = object.webTitle;
-      var article = new Article(id, title);
+      var article = new Article(object.id, object.webTitle, object.webUrl);
       articleList.push(article);
     });
   };
@@ -25,7 +22,7 @@ btn.addEventListener("click", function(){
 function titles(articleList) {
   var htmlString = "";
   for (i = 0; i < articleList.length; i++) {
-    htmlString += "<a style='text-decoration: none' href=" +"'javascript:articleList[i].summary(\"" + articleList[i].id + "\")'> " + articleList[i].title + " </a><br><br>";
+    htmlString += "<a style='text-decoration: none' href=" +"'javascript:articleList[i].summary(\"" + articleList[i].webUrl + "\",\"" + articleList[i].id + "\")'> " + articleList[i].title + " </a><br><br>";
     articleDiv.insertAdjacentHTML('beforeend', htmlString);
   }
 }
