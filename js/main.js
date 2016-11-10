@@ -1,6 +1,9 @@
 var btn = document.getElementById("btn");
-var articleDiv = document.getElementById("article");
+var btn1 = document.getElementById("btn1");
+var articleDiv = document.getElementById("article")
+var summaryDiv = document.getElementById("summary");
 var fullArticleDiv = document.getElementById("full_article");
+
 
 btn.addEventListener("click", function(){
 
@@ -39,3 +42,23 @@ function renderFullArticle(data){
   fullArticleDiv.innerHTML = articleBody;
 
 }
+
+
+
+btn1.addEventListener("click", function(){
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=http://worrydream.com/MediaForThinkingTheUnthinkable/note.html", false);
+  xhr.send();
+
+  var ourData = JSON.parse(xhr.responseText);
+  showSummary(ourData);
+});
+
+
+function showSummary(data) {
+  var htmlString = " "
+    for (i=0; i< 3; i++){
+      htmlString+= data.sentences[i] + " ";
+    }
+  summaryDiv.innerHTML = htmlString;
+};
