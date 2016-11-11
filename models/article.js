@@ -13,7 +13,7 @@ Article.prototype.full = function(article){
   fullArticle.onload = function() {
     var data = JSON.parse(fullArticle.responseText);
     var articleBody = data.response.content.fields.body;
-    document.getElementById(article).insertAdjacentHTML("beforeend", articleBody)
+    document.getElementById(article+"_text").innerHTML = articleBody
   };
 };
 
@@ -29,6 +29,7 @@ Article.prototype.summary = function(url, id, article) {
     }
     console.log(article)
     summary = "<br><a style='text-decoration: none' href=" + "'javascript:articleList[i].full(\"" + article+ "\")'>" + htmlString + " </a><button type='button' onclick='clearDiv("+ article + ',' + articleList[i].index + ")'>Hide</button><br><br>";
-    document.getElementById(article).insertAdjacentHTML("beforeend", summary)
+    console.log('test')
+    document.getElementById(article+"_text").innerHTML = summary
   };
 };

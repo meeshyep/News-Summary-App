@@ -22,7 +22,7 @@ btn.addEventListener("click", function(){
 function titles() {
   var htmlString = "";
   for (i = 0; i < articleList.length; i++) {
-    htmlString += "<div id='article_"+i+"'><a style='text-decoration: none' href=" +"'javascript:articleList["+i+"].summary(\"" + articleList[i].webUrl + "\",\"" + articleList[i].id +  "\", \"article_" + i + "\")'> " + articleList[i].title + " </a></div><br><br>";
+    htmlString += "<div id='article_"+i+"'><a style='text-decoration: none' href=" +"'javascript:articleList["+i+"].summary(\"" + articleList[i].webUrl + "\",\"" + articleList[i].id +  "\", \"article_" + i + "\")'> " + articleList[i].title + " </a><div id='article_"+i+"_text'></div><br><br></div>";
   }
   articleDiv.insertAdjacentHTML('beforeend', htmlString);
 }
@@ -32,18 +32,4 @@ function clearDiv (div_id, index) {
   console.log(articleList)
   console.log(div_id);
     document.getElementById(div_id).innerHTML = "<a style='text-decoration: none' href=" +"'javascript:articleList["+index+"].summary(\"" + articleList[index].webUrl + "\",\"" + articleList[index].id +  "\", \"article_" + i + "\")'> " + articleList[index].title + " </a></div><br><br>";
-
 }
-
-// function renderFullArticle(data){
-//   var articleBody = data.response.content.fields.body;
-//   fullArticleDiv.innerHTML = articleBody;
-// }
-//
-// function showSummary(data) {
-//   var htmlString = " ";
-//   for (i=0; i< 3; i++){
-//     htmlString+= data.sentences[i] + " ";
-//   }
-//   summaryDiv.innerHTML = htmlString;
-// }
