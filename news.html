@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>News summary</title>
   <link rel="stylesheet" href="css/index.css"/>
   <link rel="stylesheet" href="css/style.css"/>
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Prociono">
@@ -10,20 +11,48 @@
     font-size: 20px;
   }
   </style>
-  <title>News summary</title>
 </head>
-<body>
-  <button id="btn">Fetch the news</button><br><br>
-  <div id="summary"></div>
-  <div id="article"></div>
-  <div id="full_article"></div>
-  <div id="articles">
-  </div>
-
-  <script type="text/javascript" src="js/main.js"></script>
-  <script type="text/javascript" src="models/article.js"></script>
-  <script src="./spec/spec_helper.js"></script>
-  <script src="./spec/assert.js"></script>
-  <script src="./spec/news_spec.js"></script>
-</body>
+  <div class="container">
+    <div class="jumbotron page-header jumbo">
+      <h1><span class="center">Welcome to NewsApp</span></h1>
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#"<button id="btn">News</button>
+                <div id="summary"></div><div id="article"></div><div id="full_article"></div><div id="articles"></div>
+              </a></li>
+              <li><a href="#"<button id="btn">Culture</button>
+                <div id="summary"></div><div id="article"></div><div id="full_article"></div><div id="articles"></div>
+              </a></li>
+              <li><a href="#"<button id="btn">Technology</button>
+                <div id="summary"></div><div id="article"></div><div id="full_article"></div><div id="articles"></div>
+              </a></li>
+              <li><a href="#"<button id="btn">Politics</button>
+                <div id="summary"></div><div id="article"></div><div id="full_article"></div><div id="articles"></div>
+              </a></li>
+              <li><a href="#"<button id="btn">Sports</button>
+                <div id="summary"></div><div id="article"></div><div id="full_article"></div><div id="articles"></div>
+              </a></li>
+              <input type='hidden' name='_method' value='delete'>
+            </ul>
+          </div>
+        </div>
+      </head>
+      <body>
+        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="models/article.js"></script>
+        <script src="./spec/spec_helper.js"></script>
+        <script src="./spec/assert.js"></script>
+        <script src="./spec/news_spec.js"></script>
+      </body>
+      <div id="wrap">
+        <div id="main" class="container clear-top">
+        </div>
+      </div>
 </html>

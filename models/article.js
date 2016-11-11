@@ -1,8 +1,9 @@
-
-function Article (id, title, url) {
+function Article (id, title, url, index, thumbnail) {
   this.id = id;
   this.title = title;
   this.webUrl = url;
+  this.index = index;
+  this.thumbnail = thumbnail;
 }
 
 Article.prototype.full = function(article){
@@ -16,19 +17,18 @@ Article.prototype.full = function(article){
   };
 };
 
+
 Article.prototype.summary = function(url, id, article) {
   var xhr = new XMLHttpRequest();
   xhr.open("GET", "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=" + url, true);
   xhr.send();
-  console.log(id);
   xhr.onload = function() {
     var data = JSON.parse(xhr.responseText);
     var htmlString = " ";
     for (i=0; i< 3; i++){
       htmlString+= data.sentences[i] + " ";
     }
-    index = articleList.indexOf(this);
-    summary = "<br><a style='text-decoration: none' href=" + "'javascript:articleList[i].full(\"" + article+ "\")'>" + htmlString + " </a><br><br>";
+    summary = "<br><a style='text-decoration: none' href=" + "'javascript:articleList[i].full(\"" + article+ "\")'>" + htmlString + " </a><button type='button' onclick='clearDiv("+ article + ',' + articleList[i].index + ")'>Hide</button><br><br>";
     document.getElementById(article).insertAdjacentHTML("beforeend", summary);
   };
 };
