@@ -11,11 +11,10 @@ btn.addEventListener("click", function(){
   ourRequest.send();
   ourRequest.onload = function() {
     var ourData = JSON.parse(ourRequest.responseText);
-    ourData.response.editorsPicks.forEach(function(object) {
-      var article = new Article(object.id, object.webTitle, object.webUrl);
-      articleList.push(article);
-    });
-    console.log(articleList)
+    for (i=0; i < ourData.response.editorsPicks.length; i++){
+      var object = ourData.response.editorsPicks[i]
+      articleList.push(new Article(object.id, object.webTitle, object.webUrl,i))
+    };
     titles();
   };
 });
@@ -26,6 +25,14 @@ function titles() {
     htmlString += "<div id='article_"+i+"'><a style='text-decoration: none' href=" +"'javascript:articleList["+i+"].summary(\"" + articleList[i].webUrl + "\",\"" + articleList[i].id +  "\", \"article_" + i + "\")'> " + articleList[i].title + " </a></div><br><br>";
   }
   articleDiv.insertAdjacentHTML('beforeend', htmlString);
+}
+
+
+function clearDiv (div_id, index) {
+  console.log(articleList)
+  console.log(div_id);
+    document.getElementById(div_id).innerHTML = "<a style='text-decoration: none' href=" +"'javascript:articleList["+index+"].summary(\"" + articleList[index].webUrl + "\",\"" + articleList[index].id +  "\", \"article_" + i + "\")'> " + articleList[index].title + " </a></div><br><br>";
+
 }
 
 // function renderFullArticle(data){
