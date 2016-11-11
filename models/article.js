@@ -1,9 +1,10 @@
 
-function Article (id, title, url, index) {
+function Article (id, title, url, index, thumbnail) {
   this.id = id;
   this.title = title;
   this.webUrl = url;
-  this.index = index
+  this.index = index;
+  this.thumbnail = thumbnail;
 }
 
 Article.prototype.full = function(article){
@@ -13,9 +14,10 @@ Article.prototype.full = function(article){
   fullArticle.onload = function() {
     var data = JSON.parse(fullArticle.responseText);
     var articleBody = data.response.content.fields.body;
-    document.getElementById(article).insertAdjacentHTML("beforeend", articleBody)
+    document.getElementById(article).insertAdjacentHTML("beforeend", articleBody);
   };
 };
+
 
 Article.prototype.summary = function(url, id, article) {
   var xhr = new XMLHttpRequest();
@@ -27,8 +29,7 @@ Article.prototype.summary = function(url, id, article) {
     for (i=0; i< 3; i++){
       htmlString+= data.sentences[i] + " ";
     }
-    console.log(article)
     summary = "<br><a style='text-decoration: none' href=" + "'javascript:articleList[i].full(\"" + article+ "\")'>" + htmlString + " </a><button type='button' onclick='clearDiv("+ article + ',' + articleList[i].index + ")'>Hide</button><br><br>";
-    document.getElementById(article).insertAdjacentHTML("beforeend", summary)
+    document.getElementById(article).insertAdjacentHTML("beforeend", summary);
   };
 };
