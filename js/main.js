@@ -47,18 +47,4 @@ function titles() {
 
 function clearDiv (div_id, index) {
     document.getElementById(div_id).innerHTML = "<a style='text-decoration: none' href=" +"'javascript:articleList["+index+"].summary(\"" + articleList[index].webUrl + "\",\"" + articleList[index].id +  "\", \"article_" + i + "\")'> " + articleList[index].title + " </a></div><br><br>";
-
 }
-
-// function renderFullArticle(data){
-//   var articleBody = data.response.content.fields.body;
-//   fullArticleDiv.innerHTML = articleBody;
-// }
-//
-// function showSummary(data) {
-//   var htmlString = " ";
-//   for (i=0; i< 3; i++){
-//     htmlString+= data.sentences[i] + " ";
-//   }
-//   summaryDiv.innerHTML = htmlString;
-// }
