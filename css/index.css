@@ -1,0 +1,36 @@
+@import 'https://fonts.googleapis.com/css?family=Prociono';
+body {
+  color: #fff;
+  font-family: 'Prociono', serif;
+  font-size: 30px;
+  /*text-transform: uppercase;*/
+  background: url('http://il3.picdn.net/shutterstock/videos/5390543/thumb/1.jpg');
+  background-size: 100%;
+  /*background-repeat: no-repeat;
+  background-position: top;*/
+}
+#btn {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  border: 0;
+  margin-top: 140px;
+  background: #C91212;
+  width: 40%;
+  height: 10%;
+  color: #fff;
+  font-size: 15px;
+  font-family: 'Prociono', serif;
+  letter-spacing: 2px;
+  text-align: center;
+  text-shadow: 2px 2px #521414;
+  border-radius: 12px;
+}
+
+#summary {
+  font-family: 'Prociono', serif;
+  font-size: 25px;
+  letter-spacing: 2px;
+  color: #3C444C ;
+  position: relative;
+}

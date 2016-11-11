@@ -16,10 +16,21 @@ Article.prototype.summary = function(id) {
   var xhr = new XMLHttpRequest();
   xhr.open("GET", "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=http://content.guardianapis.com/" + id + "/note.html");
   xhr.send();
+
   var data = JSON.parse(xhr.responseText);
   var htmlString = " ";
   for (i=0; i< 3; i++){
     htmlString+= data.sentences[i] + " ";
   }
   summaryDiv.innerHTML = htmlString;
+
+  console.log(id);
+  xhr.onload = function() {
+    var data = JSON.parse(xhr.responseText);
+    var htmlString = " ";
+    for (i=0; i< 3; i++){
+      htmlString+= data.sentences[i] + " ";
+      summaryDiv.innerHTML = "<a style='text-decoration: none' href=" + "'javascript:articleList[i].full(\"" + id + "\")'>" + htmlString + " </a><br><br>";
+    }
+  };
 };

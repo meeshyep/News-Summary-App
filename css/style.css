@@ -1,5 +1,38 @@
-a {
-  font-size: 2vw;
-  color: green;
-  font-family: Calibri;
-}
+@import 'https://fonts.googleapis.com/css?family=Prociono';
+  body {
+    font-size: 10px;
+    text-transform: uppercase;
+    background: url('http://il3.picdn.net/shutterstock/videos/5390543/thumb/1.jpg');
+    background-size: cover;
+    color: #fff;
+    font-family: 'Prociono', serif;
+  }
+
+  .container {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      text-shadow: 2px 2px #000;
+  }
+
+  #btn {
+    background-color: #ff3333;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+    font-size: 100%;
+    font-family: 'Prociono', serif;
+    letter-spacing: 3px;
+    width: 15%;
+    height: 5%;
+    position: relative;
+  }
+
+  #summary {
+    font-family: 'Prociono', serif;
+    font-size: 25px;
+    letter-spacing: 2px;
+    color: #3C444C ;
+    position: relative;
+  }
