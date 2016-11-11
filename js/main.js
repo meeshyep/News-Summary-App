@@ -1,5 +1,5 @@
 var btn = document.getElementById("btn");
-var articleDiv = document.getElementById("article");
+var articleDiv = document.getElementById("articles");
 var summaryDiv = document.getElementById("summary");
 var fullArticleDiv = document.getElementById("full_article");
 var articleList = [];
@@ -15,27 +15,28 @@ btn.addEventListener("click", function(){
       var article = new Article(object.id, object.webTitle, object.webUrl);
       articleList.push(article);
     });
+    console.log(articleList)
+    titles();
   };
-  titles(articleList);
 });
 
-function titles(articleList) {
+function titles() {
   var htmlString = "";
   for (i = 0; i < articleList.length; i++) {
-    htmlString += "<a style='text-decoration: none' href=" +"'javascript:articleList[i].summary(\"" + articleList[i].webUrl + "\",\"" + articleList[i].id + "\")'> " + articleList[i].title + " </a><br><br>";
-    articleDiv.insertAdjacentHTML('beforeend', htmlString);
+    htmlString += "<div id='article_"+i+"'><a style='text-decoration: none' href=" +"'javascript:articleList["+i+"].summary(\"" + articleList[i].webUrl + "\",\"" + articleList[i].id + "\")'> " + articleList[i].title + " </a></div><br><br>";
   }
+  articleDiv.insertAdjacentHTML('beforeend', htmlString);
 }
 
-function renderFullArticle(data){
-  var articleBody = data.response.content.fields.body;
-  fullArticleDiv.innerHTML = articleBody;
-}
-
-function showSummary(data) {
-  var htmlString = " ";
-  for (i=0; i< 3; i++){
-    htmlString+= data.sentences[i] + " ";
-  }
-  summaryDiv.innerHTML = htmlString;
-}
+// function renderFullArticle(data){
+//   var articleBody = data.response.content.fields.body;
+//   fullArticleDiv.innerHTML = articleBody;
+// }
+// 
+// function showSummary(data) {
+//   var htmlString = " ";
+//   for (i=0; i< 3; i++){
+//     htmlString+= data.sentences[i] + " ";
+//   }
+//   summaryDiv.innerHTML = htmlString;
+// }

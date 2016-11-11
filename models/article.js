@@ -11,12 +11,9 @@ Article.prototype.full = function(id){
   fullArticle.send();
   fullArticle.onload = function() {
     var data = JSON.parse(fullArticle.responseText);
-    renderFullArticle(data);
+    var articleBody = data.response.content.fields.body;
+    fullArticleDiv.innerHTML = articleBody;
   };
-};
-Article.prototype.renderFullArticle = function(data){
-  var articleBody = data.response.content.fields.body;
-  fullArticleDiv.innerHTML = articleBody;
 };
 
 Article.prototype.summary = function(url, id) {
