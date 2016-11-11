@@ -3,13 +3,11 @@ body {
   color: #fff;
   font-family: 'Prociono', serif;
   font-size: 30px;
-  /*text-transform: uppercase;*/
   background: url('http://il3.picdn.net/shutterstock/videos/5390543/thumb/1.jpg');
   background-size: 100%;
-  /*background-repeat: no-repeat;
-  background-position: top;*/
 }
-#btn {
+
+/*#btn {
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -24,13 +22,47 @@ body {
   letter-spacing: 2px;
   text-align: center;
   text-shadow: 2px 2px #521414;
-  border-radius: 12px;
+  border-radius: 12px;*/
+
+#summary {
+  color: 181836;
 }
 
 #summary {
   font-family: 'Prociono', serif;
   font-size: 25px;
   letter-spacing: 2px;
-  color: #3C444C ;
   position: relative;
+}
+
+.jumbo {
+  background: url(http://www.enidia.com/wp-content/uploads/2013/03/new-york-skyline-night-wallpaper_1-1-e1362200069262.jpg) no-repeat center;
+  height:50%
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+.center {
+  text-align: center;
 }
