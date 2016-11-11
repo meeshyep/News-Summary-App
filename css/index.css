@@ -10,12 +10,22 @@ body {
   background-position: top;
 }
 
-.container {
-  width: 80%;
-  margin-left: auto;
+/*#btn {*/
+  /*margin-left: auto;
   margin-right: auto;
-  text-shadow: 2px 2px #000;
-}
+  display: block;
+  margin-top:100px;
+  font-size:15px;
+  border-top: 2px solid #a3ceda;
+  border-left: 2px solid #a3ceda;
+  border-right: 2px solid #4f6267;
+  border-bottom: 2px solid #4f6267;
+  padding: 10px 20px !important;
+  font-size: 14px !important;
+  background-color:	#c4f1fe;
+  font-weight: bold;
+  color: #2d525d;*/
+/*}*/
 
 /*
 #article {
@@ -36,21 +46,10 @@ body {
     position: relative;
   }
 
-#btn {
-  /*margin-left: auto;
-  margin-right: auto;
-  display: block;
-  margin-top:100px;
-  font-size:15px;
-  border-top: 2px solid #a3ceda;
-  border-left: 2px solid #a3ceda;
-  border-right: 2px solid #4f6267;
-  border-bottom: 2px solid #4f6267;
-  padding: 10px 20px !important;
-  font-size: 14px !important;
-  background-color:	#c4f1fe;
-  font-weight: bold;
-  color: #2d525d;*/
+
+.jumbo {
+  background: url(http://www.enidia.com/wp-content/uploads/2013/03/new-york-skyline-night-wallpaper_1-1-e1362200069262.jpg) no-repeat center;
+  height:50%
 }
 
 #articles {

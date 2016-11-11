@@ -1,4 +1,3 @@
-
 function Article (id, title, url, index, thumbnail) {
   this.id = id;
   this.title = title;
