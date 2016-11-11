@@ -42,7 +42,7 @@ var assert = {
     else {
       console.log("Test Passed: "+assertionToCheck+" is contained in "+assertionToContain)
     }
-  }
+  },
   toNotContain: function(assertionToCheck, assertionToContain){
     if (assertionToContain.indexOf(assertionToCheck) !== -1){
       console.log("Test Failed: "+assertionToCheck+" is contained in "+assertionToContain)
