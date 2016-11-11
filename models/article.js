@@ -29,7 +29,7 @@ Article.prototype.summary = function(url, id, article) {
     for (i=0; i< 3; i++){
       htmlString+= data.sentences[i] + " ";
     }
-    summary = "<br><a style='text-decoration: none' href=" + "'javascript:articleList[i].full(\"" + article+ "\")'>" + htmlString + " </a><button type='button' onclick='clearDiv("+ article + ',' + articleList[i].index + ")'>Hide</button><br><br>";
+    summary = "<br><a style='text-decoration: none' href=" + "'javascript:articleList[i].full(\"" + article+ "\")'>" + htmlString + " </a><button id='hide' type='button'>Hide</button><br><br>";
     document.getElementById(article).insertAdjacentHTML("beforeend", summary);
   };
 };
