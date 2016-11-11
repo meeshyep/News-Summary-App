@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-<link rel="stylesheet" href="css/style.css" >
-
-    <title>News summary</title>
-  </head>
-  <body>
-    <div id="full_article">
-
-    </div>
-<div id="articles">
+<head>
+  <link rel="stylesheet" href="css/index.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Prociono">
+  <style>
+  body {
+    font-family: 'Tangerine', serif;
+    font-size: 20px;
+  }
+  </style>
+  <title>News summary</title>
+</head>
+<body>
   <button id="btn">Fetch the news</button><br><br>
-  <div id='summary'> </div>
-</div>
-
+  <div id="summary"></div>
+  <div id="article"></div>
+  <div id="full_article"></div>
+  <div id="articles">
+  </div>
 
   <script type="text/javascript" src="js/main.js"></script>
   <script type="text/javascript" src="models/article.js"></script>
   <script src="./spec/spec_helper.js"></script>
   <script src="./spec/assert.js"></script>
   <script src="./spec/news_spec.js"></script>
-  </body>
+</body>
 </html>

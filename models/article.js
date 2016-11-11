@@ -12,7 +12,7 @@ Article.prototype.full = function(article){
   fullArticle.onload = function() {
     var data = JSON.parse(fullArticle.responseText);
     var articleBody = data.response.content.fields.body;
-    document.getElementById(article).insertAdjacentHTML("beforeend", articleBody)
+    document.getElementById(article).insertAdjacentHTML("beforeend", articleBody);
   };
 };
 
@@ -27,7 +27,8 @@ Article.prototype.summary = function(url, id, article) {
     for (i=0; i< 3; i++){
       htmlString+= data.sentences[i] + " ";
     }
+    index = articleList.indexOf(this);
     summary = "<br><a style='text-decoration: none' href=" + "'javascript:articleList[i].full(\"" + article+ "\")'>" + htmlString + " </a><br><br>";
-    document.getElementById(article).insertAdjacentHTML("beforeend", summary)
+    document.getElementById(article).insertAdjacentHTML("beforeend", summary);
   };
 };
